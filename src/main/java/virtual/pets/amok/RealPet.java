@@ -141,6 +141,12 @@ public abstract class RealPet extends Pet {
 				if (bowelLevel > 5) {
 					bowelLevel = 10;
 				}
+				if (getHappiness() <= 5) {
+				    setHappiness(getHappiness() + 5);
+				}
+				if(getHappiness()> 5) {
+					setHappiness(10);
+				}
 				updateAttributes();
 				return "Yum!";
 			}

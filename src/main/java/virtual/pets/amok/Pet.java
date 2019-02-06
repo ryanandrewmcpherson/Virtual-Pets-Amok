@@ -155,6 +155,12 @@ public abstract class Pet {
 		} else {
 			boredom = 0;
 		}
+		if (getHappiness() <= 5) {
+		    setHappiness(getHappiness() + 5);
+		}
+		if(getHappiness()> 5) {
+			setHappiness(10);
+		}
 		updateAttributes();
 	}
 
