@@ -99,19 +99,19 @@ public abstract class RealPet extends Pet {
 	public void updateHealth(int soilLevel) {
 		super.updateHealth(soilLevel);
 		if (soilLevel == 10) {
-			setHealth(getHealth() - 1);
+			decrementHealth();
 		} else if (soilLevel == 0) {
-			setHealth(getHealth() + 1);
+		incrementHealth();
 		}
 		if (getHunger() == 10) {
-			setHealth(getHealth() - 1);
+			decrementHealth();
 		} else if (getHunger() == 0) {
-			setHealth(getHealth() + 1);
+			incrementHealth();
 		}
 		if (getThirst() == 10) {
-			setHealth(getHealth() - 1);
+			decrementHealth();
 		} else if (getThirst() == 0) {
-			setHealth(getHealth() + 1);
+		incrementHealth();
 		}
 		updateAttributes();
 	}

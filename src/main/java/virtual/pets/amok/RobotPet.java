@@ -1,6 +1,6 @@
 package virtual.pets.amok;
 
-public abstract class RobotPet extends Pet{
+public abstract class RobotPet extends Pet {
 
 	private int oilLvl;
 	private int batteryLvl;
@@ -10,8 +10,8 @@ public abstract class RobotPet extends Pet{
 		this.setOilLevel(5);
 		this.setBatteryLevel(5);
 		updateAttributes();
-	    setRobot(true);
-	    setReal(false);
+		setRobot(true);
+		setReal(false);
 	}
 
 	public int getOilLevel() {
@@ -38,23 +38,22 @@ public abstract class RobotPet extends Pet{
 		getAttributes().put("^Oil Lvl", oilLvl);
 		getAttributes().put("^Battery Lvl", batteryLvl);
 	}
+
 	@Override
 	public void updateHealth(int soilLevel) {
-    super.updateHealth(soilLevel);
-		if(getOilLevel() == 10)
-		{
-		 setHealth(getHealth() + 1);
-		} else if(getOilLevel() == 0){
-		 setHealth(getHealth() - 1);
+		super.updateHealth(soilLevel);
+		if (getOilLevel() == 10) {
+			incrementHealth();
+		} else if (getOilLevel() == 0) {
+			decrementHealth();
 		}
-		
-		if(getBatteryLevel() == 10)
-		{
-		 setHealth(getHealth() + 1);
-		}else if(getBatteryLevel() == 0) {
-		 setHealth(getHealth() + 1);
+
+		if (getBatteryLevel() == 10) {
+			incrementHealth();
+		} else if (getBatteryLevel() == 0) {
+			decrementHealth();
 		}
-	
+
 		updateAttributes();
 	}
 

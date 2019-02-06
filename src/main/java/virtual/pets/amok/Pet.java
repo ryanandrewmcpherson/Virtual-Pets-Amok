@@ -99,16 +99,28 @@ public abstract class Pet {
 
 	public void updateHealth(int soilLevel) {
 		if (boredom == 10) {
-			setHealth(getHealth() - 1);
+			decrementHealth();
 		} else if (boredom == 0) {
-			setHealth(getHealth() + 1);
+			incrementHealth();
 		}
 		if (happiness == 10) {
-			setHealth(getHealth() + 1);
+			incrementHealth();
 		} else if (happiness == 0) {
-			setHealth(getHealth() + 1);
+			decrementHealth();
 		}
 
+	}
+
+	protected void incrementHealth() {
+		if(health<=9) {
+		setHealth(getHealth() + 1);
+		}
+	}
+
+	protected void decrementHealth() {
+		if(health <= 9) {
+		setHealth(getHealth() - 1);
+		}
 	}
 
 	public int getHealth() {
