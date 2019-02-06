@@ -28,7 +28,7 @@ public class VirtualPetShelter {
 			petCaged = true;
 		} else if (cagesHaveRoom()) {
 			for (Cage cage : cages.values()) {
-				if (cage.hasRoom() && cage.accepts(pet.getType())) {
+				if (cage.hasRoom() && cage.accepts(pet.getType()) && !cage.hasPetWithSameName()) {
 					cage.cagePet(pet);
 					petCaged = true;
 				}

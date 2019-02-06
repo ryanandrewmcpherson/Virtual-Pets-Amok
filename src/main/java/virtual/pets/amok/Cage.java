@@ -124,4 +124,11 @@ public abstract class Cage {
 		petsInCage.remove(pet.getPetName(), pet);
 	}
 
+	public boolean hasPetWithSameName(Pet pet) {
+		if(petsInCage.containsKey(pet.getPetName())) {
+			return true;
+		}
+		return false;
+	}
+
 }
